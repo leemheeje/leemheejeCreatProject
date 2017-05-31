@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>입사지원자-임희재</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/ico.ico" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <script src="/js/jquery-1.9.1.min.js"></script>
+        <script src="/js/jquery.cookie.js"></script>
+        <script src="/js/jquery.easing.1.3.js"></script>
+        <script src="/js/jquery.transform.js"></script>
+        <script src="/js/syworks.design.customTags.js"></script>
+        <script src="/js/syworks.design.plugin.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(this).include(true);
+            $(this).customTags();
+        });
+        </script>
+        <!--[if lt IE 9]>
+            <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <script src="http://jamesallardice.github.io/Placeholders.js/assets/js/placeholders.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body class="sub">
+        <div class="wrap">
+            <div class="toolbar">
+                <!-- 툴바영역입니다. -->
+            </div>
+            <div class="header">
+                <!-- 헤더영역입니다. -->
+            </div>
+            <div class="container">
+                <script type="text/javascript" src="/js/mainGridHtmlPars.js"></script>
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    var params = $(this).getParams('pageNum');
+                    var mod = mainGridHtml.items[params].mode.split(',');
+                    var label = '';
+                    var txt = '';
+                    var aniC = function(obj) {
+                        return $.extend(true, {
+                            duration: 2500,
+                        }, obj);
+                    };
+                    $('.parmS').html(mainGridHtml.items[params].tit);
+                    $('.parmT').html(mainGridHtml.items[params].subj);
+                    if (mainGridHtml.items[params].chat) {
+                        $('.valNu').animate({
+                            'width': mainGridHtml.items[params].chat + '%'
+                        }, aniC());
+                        $('.valRt').animate({
+                            'numUp': mainGridHtml.items[params].chat
+                        }, aniC({
+                            step: function(a, b, c) {
+                                var num = Math.floor(a);
+                                $(this).text(num);
+                            }
+                        }));
+                    } else {
+                        $('.valNu').animate({
+                            'width': '100%'
+                        }, aniC());
+                        $('.valRt').animate({
+                            'numUp': 100
+                        }, aniC({
+                            step: function(a, b, c) {
+                                var num = Math.floor(a);
+                                $(this).text(num);
+                            }
+                        }));
+                    }
+                    for (var i = 0; i < mod.length; i++) {
+                        if (mod[i]) {
+                            if (mod[i].indexOf('js') != -1) {
+                                txt = '자체개발JS';
+                            } else if (mod[i].indexOf('IE') != -1) {
+                                txt = mod[i];
+                                mod[i] = 'ie';
+                            } else {
+                                switch (mod[i]) {
+                                    case 'res':
+                                        txt = '반응형';
+                                        break;
+                                    case 'cms':
+                                        txt = 'CMS';
+                                        break;
+                                    case 'hyb':
+                                        txt = '하이브리드앱';
+                                        break;
+                                    case 'tmc':
+                                        txt = '접근성';
+                                        break;
+                                }
+                            }
+                            label += ' <span class="label ' + mod[i] + '">' + txt + '</span>';
+                        }
+                    }
+                    $('.parmA').append(label);;
+                    (function($) {
+                        var items = mainGridHtml.items;
+                        $('.pfImgsParsArea').append('<img src="' + items[params].img + '" alt="' + items[params].tit + ' 이미지 1"/>');
+                        if (items[params].subImgs) {
+                            for (var i = 0; i < items[params].subImgs.length; i++) {
+                                $('.pfImgsParsArea').append('<img src="' + items[params].subImgs[i] + '" alt="' + items[params].tit + ' 이미지' + (i + 2) + '"/>');
+                            }
+                        } else {
+                            $('.pfImgsParsArea').append('<div class="NO_RESULT">등록된 이미지가 없습니다.</div>');
+                        }
+                        if (items[params].href) {
+                            if (items[params].href.indexOf('http') == -1) {
+                                $('.bt01 a').prop('href', 'javascript: alert("' + items[params].href + '")');
+                            } else {
+                                $('.bt01 a').prop('href', items[params].href);
+                            }
+                        }
+                        $('.bt02 a').click(function() {
+                            if ($(window).scrollTop() != 0) {
+                                $('html, body').stop().animate({
+                                    scrollTop: 0,
+                                });
+                            }
+                            return false;
+                        });
+                        $('.bt04 a').click(function() {
+                            var nextpage = null;
+                            if (params < items.length - 1) {
+                                nextpage = Number(params) + 1;
+                            } else {
+                                nextpage = 0;
+                            }
+                            location.href = '?pageNum=' + nextpage + '?currenMenu=0';
+                            return false;
+                        });
+                        $('.bt03 a').click(function() {
+                            var prevpage = null;
+                            if (params != 0) {
+                                prevpage = Number(params) - 1;
+                            } else {
+                                prevpage = items.length - 1
+                            }
+                            location.href = '?pageNum=' + prevpage + '?currenMenu=0';
+                            return false;
+                        });
+                    })(jQuery);
+                    mainGridHtml.pfPars();
+                });
+                </script>
+                <div class="contents">
+                    <div class="cont_in">
+                        <div class="lef_box fixedAsideBox">
+                            <div class="bx_in">
+                                <dl class="sj_lst sjLst">
+                                    <dt>프로젝트명</dt>
+                                    <dd class="parmS"></dd>
+                                </dl>
+                                <dl class="sj_lst sjLst">
+                                    <dt>설명</dt>
+                                    <dd class="parmT"></dd>
+                                </dl>
+                                <dl class="sj_lst indent sjLst">
+                                    <dt>사이트스펙</dt>
+                                    <dd class="parmA">
+                                    </dd>
+                                </dl>
+                                <dl class="sj_lst perc">
+                                    <dt>작업기여도</dt>
+                                    <dd>
+                                        <div class="cht_bar">
+                                            <div class="val_nu_area">
+                                                <span class="valNu"></span>
+                                            </div>
+                                            <span class="txt">
+                                                <b class="valRt"></b>%</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <ul class="bt_gr clearfix">
+                                    <li class="bt01">
+                                        <a href="" target="_blank" title="새창">웹사이트 바로가기</a>
+                                    </li>
+                                    <li class="bt02">
+                                        <a href="#" title="상단이동">
+                                            <span class="ti-angle-up"></span>
+                                        </a>
+                                    </li>
+                                    <li class="bt03">
+                                        <a href="#" title="이전포트폴리오">
+                                            <span class="ti-angle-left"></span>
+                                        </a>
+                                    </li>
+                                    <li class="bt04">
+                                        <a href="#" title="다음포트폴리오">
+                                            <span class="ti-angle-right"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cen_box">
+                            <div class="bx_in">
+                                <div class="pf_imgs pfImgsParsArea"></div>
+                            </div>
+                        </div>
+                        <div class="rig_box fixedAsideBox">
+                            <div class="bx_in">
+                                <div class="tit">프로젝트리스트</div>
+                                <ul class="pf_lst pfLstParsArea"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

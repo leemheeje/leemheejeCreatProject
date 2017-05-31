@@ -1,0 +1,31 @@
+<script src="/js/syworks.design.header.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+		gnb.init();;
+		(function($) {
+				var getMenuIdx = $(this).getParams('currentMenu');
+				$('.gnbMenu li:eq(' + getMenuIdx + ')').addClass('active');
+		})(jQuery);
+});
+</script>
+<div class="header_inner">
+		<div class="h_logo">
+				<a href="/" class="logo" title="로고"></a>
+		</div>
+		<div class="h_nav">
+				<ul class="clearfix gnbMenu">
+						<li class="nitems">
+								<a href="/sub.html?pageNum=0?currentMenu=0">PORTFOLIO</a>
+						</li>
+						<li class="nitems">
+								<a href="/plug.html?currentMenu=1">자체제작 PLUGIN</a>
+						</li>
+						<li class="nitems">
+								<a href="/abu.html?currentMenu=2">ABOUT</a>
+						</li>
+						<!-- <li class="nitems">
+								<a href="#?currentMenu=3">STUDY GROUP</a>
+						</li> -->
+				</ul>
+		</div>
+</div>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>입사지원자-임희재</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/ico.ico" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <script src="/js/jquery-1.9.1.min.js"></script>
+        <script src="/js/jquery.cookie.js"></script>
+        <script src="/js/jquery.easing.1.3.js"></script>
+        <script src="/js/jquery.transform.js"></script>
+        <script src="/js/syworks.design.customTags.js"></script>
+        <script src="/js/syworks.design.plugin.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(this).include(true);
+            $(this).customTags();
+        });
+        </script>
+        <!--[if lt IE 9]>
+                    <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+                    <script src="http://jamesallardice.github.io/Placeholders.js/assets/js/placeholders.min.js"></script>
+                <![endif]-->
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="toolbar">
+                <!-- 툴바영역입니다. -->
+            </div>
+            <div class="header">
+                <!-- 헤더영역입니다. -->
+            </div>
+            <div class="container">
+                <script type="text/javascript" src="/js/mainGridHtmlPars.js"></script>
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    mainGridHtml.set({
+                        maxlengh: 50
+                    });
+                    $('.ppGrid').rspGrid({
+                        setBox: {
+                            items: '.item',
+                            width: 270,
+                            margin: 10
+                        },
+                        animateOfOptions: {
+                            mode: 'opacity', // flip,opacity
+                            duration: 500,
+                            ease: 'easeOutExpo',
+                        }
+                    });
+                });
+                </script>
+                <div class="contents">
+                    <div class="pp_grid ppGrid"></div>
+                </div>
+            </div>
+            <div class="pop_area">
+                <div class="pop_hd">
+                    <span class="pop_tit">스킬 및 능력치</span>
+                </div>
+                <div class="pop_cont">
+                    <dl class="pop_lst">
+                        <dt class="lst_tit">웹표준</dt>
+                        <dd class="lst_bar">80</dd>
+                    </dl>
+                    <dl class="pop_lst">
+                        <dt class="lst_tit">웹표준</dt>
+                        <dd class="lst_bar">80</dd>
+                    </dl>
+                    <dl class="pop_lst">
+                        <dt class="lst_tit">웹표준</dt>
+                        <dd class="lst_bar">80</dd>
+                    </dl>
+                    <dl class="pop_lst">
+                        <dt class="lst_tit">웹표준</dt>
+                        <dd class="lst_bar">80</dd>
+                    </dl>
+                </div>
+                <div class="pop_bt">
+                    <a href="javascript:;" class="pop_close" title="팝업창닫기"></a>
+                </div>
+            </div>
+            <div class="dimm"></div>
+        </div>
+    </body>
+
+</html>

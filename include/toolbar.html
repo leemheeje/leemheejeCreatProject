@@ -1,0 +1,30 @@
+<script type="text/javascript">
+$(document).ready(function() {
+		$('.toolbarBtns').on({
+				'click': function() {
+						$.cookie('tit', true);
+						$(this).closest('.toolbar').stop().animate({
+								'height': 3
+						});
+				},
+		});
+		if ($.cookie('tit')) {
+				$('.toolbar').css({
+						'height': 3
+				});
+		} else {
+				$('.toolbar').stop().animate({
+						'height': 'auto'
+				});
+		}
+});
+</script>
+<div class="toolbar_inner">
+		<div class="toolbar_txt">
+				이 사이트는 사업적부분이 없으며, 수익이 아닌 개인의 역량을 보여주는 사이트입니다.
+		</div>
+		<a href="#" class="toolbar_btns toolbarBtns">
+				<span class="txt">다시보지않기</span>
+				<span class="ti-close"></span>
+		</a>
+</div>
