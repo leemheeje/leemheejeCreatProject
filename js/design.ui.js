@@ -35,7 +35,7 @@ var gnbMenuActFun = {
     init: function() {
         var _this = this;
         this.targEl = this.dept02 + ' ' + this.blGround;
-        //this.setCookieLoad();   
+        // this.setCookieLoad();
         this.crrtMemuFun();
         this.set();
         this.bind();
@@ -103,12 +103,12 @@ var gnbMenuActFun = {
                 var $this = $(this);
                 var $thisHref = null;
                 switch (_this.crrtParamValue) {
-                    case '424573': //창의교육 > 창의교육선도 교원양성대학
-                    case '447628': //창의교육 > 창의교육 거점센터 
+                    case '424573': // 창의교육 > 창의교육선도 교원양성대학
+                    case '447628': // 창의교육 > 창의교육 거점센터
                         var params = jQuery(window).getParams('m');
                         $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref + '&m=' + params) != -1 : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
                         break;
-                    case '126176': //창의교육 > 창의교육 백문백답
+                    case '126176': // 창의교육 > 창의교육 백문백답
                         var params = jQuery(window).getParams('C');
                         $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref) != -1 && $this.attr('href').indexOf('&C=' + params) != -1 : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
                         break;
@@ -430,7 +430,7 @@ var asideMenuFun = {
             jQuery(_this.mobile.lst).html($gnbHtml);
         };
         var getHistoryAsideBtn = function(){
-            var tar = ['#templatic_text-31' , '#templatic_text-11'];//,'[id^="directory_mile_range_widget"]'
+            var tar = ['#templatic_text-31' , '#templatic_text-11'];// ,'[id^="directory_mile_range_widget"]'
             for(var i = 0; i<tar.length; i++){
                 if(jQuery(tar[i]).length){
                     jQuery('.asideMenuDepth02').after(jQuery(tar[i]));  
@@ -650,7 +650,7 @@ var cmmDialogFun = {
         }
     },
     align: function() {
-        return 0;//jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
+        return 0;// jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
     },
     callb: function() {},
     animateCallback: function(obj) {
