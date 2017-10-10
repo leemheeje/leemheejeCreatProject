@@ -62,7 +62,7 @@ if ( location.host.indexOf( ':8000' ) != -1 ) document.write( '<script src="http
 			}
 		} ,
 		multiEllip : function ( opt ) {
-			var defaults = {
+			var defaults = { 
 				len : 0 ,
 				ellips : '...' ,
 				space : false ,
